@@ -805,19 +805,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\valdi\\.nuget\\packages\\": {}
+    "C:\\Users\\Vinicios\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DDD2022\\API_DDD_2022_PARTE_4\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Projetos\\TM\\TournamentManager_ApiCore\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\DDD2022\\API_DDD_2022_PARTE_4\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\valdi\\.nuget\\packages\\",
-      "outputPath": "C:\\DDD2022\\API_DDD_2022_PARTE_4\\Entities\\obj\\",
+      "projectPath": "C:\\Projetos\\TM\\TournamentManager_ApiCore\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\Vinicios\\.nuget\\packages\\",
+      "outputPath": "C:\\Projetos\\TM\\TournamentManager_ApiCore\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\valdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vinicios\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -875,7 +875,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

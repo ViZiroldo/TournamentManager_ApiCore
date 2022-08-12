@@ -1,6 +1,6 @@
 using AutoMapper;
-using Domain.Interfaces;
 using Domain.Interfaces.Generics;
+using Domain.Interfaces.Interfaces;
 using Domain.Interfaces.InterfaceServices;
 using Domain.Services;
 using Entities.Entities;
@@ -34,11 +34,20 @@ builder.Services.AddRazorPages();
 
 // INTERFACE E REPOSITORIO
 builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGenerics<>));
-builder.Services.AddSingleton<IMessage, RepositoryMessage>();
+builder.Services.AddSingleton<ITime, RepositoryTime>();
+builder.Services.AddSingleton<IPlayer, RepositoryPlayer>();
+builder.Services.AddSingleton<IFuncao, RepositoryFuncao>();
+builder.Services.AddSingleton<IJogos, RepositoryJogos>();
+builder.Services.AddSingleton<ITorneio, RepositoryTorneio>();
+builder.Services.AddSingleton<IGrupo, RepositoryGrupo>();
 
 // SERVIÇO DOMINIO
-builder.Services.AddSingleton<IServiceMessage, ServiceMessage>();
-
+builder.Services.AddSingleton<IServiceTime, ServiceTime>();
+builder.Services.AddSingleton<IServicePlayer, ServicePlayer>();
+builder.Services.AddSingleton<IServiceFuncao, ServiceFuncao>();
+builder.Services.AddSingleton<IServiceJogos, ServiceJogos>();
+builder.Services.AddSingleton<IServiceTorneio, ServiceTorneio>();
+builder.Services.AddSingleton <IServiceGrupo, ServiceGrupo> ();
 
 // JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -74,8 +83,20 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var config = new AutoMapper.MapperConfiguration(cfg =>
 {
-    cfg.CreateMap<MessageViewModel, Message>();
-    cfg.CreateMap<Message, MessageViewModel>();
+    cfg.CreateMap<TimeViewModel, Time>();
+    cfg.CreateMap<Time, TimeViewModel>();
+    cfg.CreateMap<PlayerViewModel, Player>();
+    cfg.CreateMap<Player, PlayerViewModel>();
+    cfg.CreateMap<FuncaoViewModel, Funcao>();
+    cfg.CreateMap<Funcao, FuncaoViewModel>();
+    cfg.CreateMap<GrupoViewModel, Grupo>();
+    cfg.CreateMap<Grupo, GrupoViewModel>();
+    cfg.CreateMap<GrupoViewModel, Grupo>();
+    cfg.CreateMap<Grupo, GrupoViewModel>();
+    cfg.CreateMap<JogosViewModel, Jogos>();
+    cfg.CreateMap<Jogos, JogosViewModel>();
+    cfg.CreateMap<TorneioViewModel, Torneio>();
+    cfg.CreateMap<Torneio, TorneioViewModel>();
 });
 
 IMapper mapper = config.CreateMapper();

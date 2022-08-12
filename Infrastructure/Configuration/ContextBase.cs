@@ -15,7 +15,12 @@ namespace Infrastructure.Configuration
         {
         }
 
-        public DbSet<Message> Message { get; set; }
+        public DbSet<Time> Time { get; set; }
+        public DbSet<Player> Player { get; set; }
+        public DbSet<Funcao> Funcao { get; set; }
+        public DbSet<Jogos> Jogos { get; set; }
+        public DbSet<Torneio> Torneio { get; set; }
+        public DbSet<Grupo> Grupo { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -38,7 +43,7 @@ namespace Infrastructure.Configuration
 
         public string ObterStringConexao()
         {
-           return  "Data Source=localhost\\SQLEXPRESS;Initial Catalog=API_DDD_2022;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+           return "Data Source=DESKTOP-EING5I7;Initial Catalog=TournamentManagerDEV;Integrated Security=True";
         }
 
     }

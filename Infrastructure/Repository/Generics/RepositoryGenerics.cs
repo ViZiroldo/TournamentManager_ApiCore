@@ -46,6 +46,14 @@ namespace Infrastructure.Repository.Generics
             }
         }
 
+        public async Task<T> GetFirstNoId()
+        {
+            using (var data = new ContextBase(_OptionsBuilder))
+            {
+                return data.Set<T>().FirstOrDefault();
+            }
+        }
+
         public async Task<List<T>> List()
         {
             using (var data = new ContextBase(_OptionsBuilder))

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{FCCF9CEF-00A2-4001-A97E-458E42248757}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{FCCF9CEF-00A2-4001-A97E-458E42248757}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Apis", "1 - Apis", "{D8EBB876-8A97-44A7-8E36-F01E855475A0}"
 EndProject
@@ -13,13 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Entities", "4 - Entities", "{11213D27-194C-47CF-8BD2-773780762C4C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{CFF3E439-6C66-4ACB-BC5B-9CA823D35497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AE4047B4-8038-4ABE-9037-BAA51DDF189D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{AE4047B4-8038-4ABE-9037-BAA51DDF189D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E6B8F2A6-552A-4289-989E-604AEA329D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{E6B8F2A6-552A-4289-989E-604AEA329D49}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIs", "WebAPIs\WebAPIs.csproj", "{43B58085-633F-4858-BA44-DEB996E6FA8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIs", "WebAPIs\WebAPIs.csproj", "{43B58085-633F-4858-BA44-DEB996E6FA8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
