@@ -11,6 +11,6 @@
         public DateTime DataCadastro { get; set; }
         public DateTime DataAlteracao { get; set; }
         public string UserId { get; set; }
-
+        public int IdTime { get; set; }
     }
 }

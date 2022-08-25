@@ -121,7 +121,7 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
-                        .HasColumnName("Funcao");
+                        .HasColumnName("Nome");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -291,6 +291,10 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(1);
+
+                    b.Property<int>("IdTime")
+                        .HasColumnType("int")
+                        .HasColumnName("IdTime");
 
                     b.HasKey("Id");
 

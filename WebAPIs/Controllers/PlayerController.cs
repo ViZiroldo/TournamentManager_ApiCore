@@ -21,20 +21,24 @@ namespace WebAPIs.Controllers
             _IPlayer = IPlayer;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Add")]
+        [HttpPost]
+        [Route("Add")]
         public async Task<List<Notifies>> Add(PlayerViewModel player)
         {
-            player.UserId = await RetornarIdUsuarioLogado();
+            //player.UserId = await RetornarIdUsuarioLogado();
             var playerMap = _IMapper.Map<Player>(player);
             await _IPlayer.Add(playerMap);
             return playerMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Update")]
+        [HttpPost]
+        [Route("Update")]
         public async Task<List<Notifies>> Update(PlayerViewModel player)
         {
             var playerMap = _IMapper.Map<Player>(player);
@@ -42,9 +46,11 @@ namespace WebAPIs.Controllers
             return playerMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Delete")]
+        [HttpPost]
+        [Route("Delete")]
         public async Task<List<Notifies>> Delete(PlayerViewModel player)
         {
             var playerMap = _IMapper.Map<Player>(player);
@@ -52,19 +58,23 @@ namespace WebAPIs.Controllers
             return playerMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/GetEntityById")]
-        public async Task<PlayerViewModel> GetEntityById(Player player)
+        [HttpGet]
+        [Route("GetEntityById/{id:int}")]
+        public async Task<PlayerViewModel> GetEntityById(int id)
         {
-            player = await _IPlayer.GetEntityById(player.Id);
+            var player = await _IPlayer.GetEntityById(id);
             var playerMap = _IMapper.Map<PlayerViewModel>(player);
             return playerMap;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/List")]
+        [HttpGet]
+        [Route("List")]
         public async Task<List<PlayerViewModel>> List()
         {
             var player = await _IPlayer.List();

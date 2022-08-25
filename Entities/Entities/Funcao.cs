@@ -15,7 +15,7 @@ namespace Entities.Entities
         [Column("ID")]
         public int Id { get; set; }
 
-        [Column("Funcao")]
+        [Column("Nome")]
         [MaxLength(255)]
         public string Nome { get; set; }
 

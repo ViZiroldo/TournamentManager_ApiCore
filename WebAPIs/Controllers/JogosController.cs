@@ -21,20 +21,24 @@ namespace WebAPIs.Controllers
             _IJogos = IJogos;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Add")]
+        [HttpPost]
+        [Route("Add")]
         public async Task<List<Notifies>> Add(JogosViewModel jogos)
         {
-            jogos.UserId = await RetornarIdUsuarioLogado();
+            //jogos.UserId = await RetornarIdUsuarioLogado();
             var jogosMap = _IMapper.Map<Jogos>(jogos);
             await _IJogos.Add(jogosMap);
             return jogosMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Update")]
+        [HttpPost]
+        [Route("Update")]
         public async Task<List<Notifies>> Update(JogosViewModel jogos)
         {
             var jogosMap = _IMapper.Map<Jogos>(jogos);
@@ -42,9 +46,11 @@ namespace WebAPIs.Controllers
             return jogosMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Delete")]
+        [HttpPost]
+        [Route("Delete")]
         public async Task<List<Notifies>> Delete(JogosViewModel jogos)
         {
             var jogosMap = _IMapper.Map<Jogos>(jogos);
@@ -52,9 +58,11 @@ namespace WebAPIs.Controllers
             return jogosMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/GetEntityById")]
+        [HttpGet]
+        [Route("GetEntityById")]
         public async Task<JogosViewModel> GetEntityById(Jogos jogos)
         {
             jogos = await _IJogos.GetEntityById(jogos.Id);
@@ -62,9 +70,11 @@ namespace WebAPIs.Controllers
             return jogosMap;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/List")]
+        [HttpGet]
+        [Route("List")]
         public async Task<List<JogosViewModel>> List()
         {
             var jogos = await _IJogos.List();

@@ -21,20 +21,24 @@ namespace WebAPIs.Controllers
             _IGrupo = IGrupo;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Add")]
+        [HttpPost]
+        [Route("Add")]
         public async Task<List<Notifies>> Add(GrupoViewModel grupo)
         {
-            grupo.UserId = await RetornarIdUsuarioLogado();
+            //grupo.UserId = await RetornarIdUsuarioLogado();
             var grupoMap = _IMapper.Map<Grupo>(grupo);
             await _IGrupo.Add(grupoMap);
             return grupoMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Update")]
+        [HttpPost]
+        [Route("Update")]
         public async Task<List<Notifies>> Update(GrupoViewModel grupo)
         {
             var grupoMap = _IMapper.Map<Grupo>(grupo);
@@ -42,9 +46,11 @@ namespace WebAPIs.Controllers
             return grupoMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Delete")]
+        [HttpPost]
+        [Route("Delete")]
         public async Task<List<Notifies>> Delete(GrupoViewModel grupo)
         {
             var grupoMap = _IMapper.Map<Grupo>(grupo);
@@ -52,9 +58,11 @@ namespace WebAPIs.Controllers
             return grupoMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/GetEntityById")]
+        [HttpGet]
+        [Route("GetEntityById")]
         public async Task<GrupoViewModel> GetEntityById(Grupo grupo)
         {
             grupo = await _IGrupo.GetEntityById(grupo.Id);
@@ -62,9 +70,11 @@ namespace WebAPIs.Controllers
             return grupoMap;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/List")]
+        [HttpGet]
+        [Route("List")]
         public async Task<List<GrupoViewModel>> List()
         {
             var grupo = await _IGrupo.List();

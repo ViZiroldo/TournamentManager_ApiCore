@@ -130,6 +130,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.UseSwaggerUI();
+//app.UseSwaggerUI();
 
 app.Run();

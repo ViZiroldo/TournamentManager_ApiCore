@@ -39,6 +39,10 @@ namespace Entities.Entities
         [Column(Order = 1)]
         public string UserId { get; set; }
 
+        [Column("IdTime")]
+        [ForeignKey("Time")]
+        public int IdTime { get; set; }
+
         public virtual ApplicationUser ApplicationUser { get; set; }
 
     }

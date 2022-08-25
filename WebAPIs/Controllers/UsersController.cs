@@ -27,7 +27,8 @@ namespace WebAPIs.Controllers
 
         [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/CriarTokenIdentity")]
+        [HttpPost]
+        [Route("CriarTokenIdentity")]
         public async Task<IActionResult> CriarTokenIdentity([FromBody] Login login)
         {
             if (string.IsNullOrWhiteSpace(login.email) || string.IsNullOrWhiteSpace(login.senha))
@@ -66,7 +67,8 @@ namespace WebAPIs.Controllers
 
         [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/AdicionaUsuarioIdentity")]
+        [HttpPost]
+        [Route("AdicionaUsuarioIdentity")]
         public async Task<IActionResult> AdicionaUsuarioIdentity([FromBody] Login login)
         {
             if (string.IsNullOrWhiteSpace(login.email) || string.IsNullOrWhiteSpace(login.senha))

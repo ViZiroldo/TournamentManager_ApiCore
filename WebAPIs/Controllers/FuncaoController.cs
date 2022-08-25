@@ -21,20 +21,24 @@ namespace WebAPIs.Controllers
             _IFuncao = IFuncao;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Add")]
+        [HttpPost]
+        [Route("Add")]
         public async Task<List<Notifies>> Add(FuncaoViewModel Funcao)
         {
-            Funcao.UserId = await RetornarIdUsuarioLogado();
+            //Funcao.UserId = await RetornarIdUsuarioLogado();
             var funcaoMap = _IMapper.Map<Funcao>(Funcao);
             await _IFuncao.Add(funcaoMap);
             return funcaoMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Update")]
+        [HttpPost]
+        [Route("Update")]
         public async Task<List<Notifies>> Update(FuncaoViewModel Funcao)
         {
             var funcaoMap = _IMapper.Map<Funcao>(Funcao);
@@ -42,9 +46,11 @@ namespace WebAPIs.Controllers
             return funcaoMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/Delete")]
+        [HttpPost]
+        [Route("Delete")]
         public async Task<List<Notifies>> Delete(FuncaoViewModel Funcao)
         {
             var funcaoMap = _IMapper.Map<Funcao>(Funcao);
@@ -52,9 +58,11 @@ namespace WebAPIs.Controllers
             return funcaoMap.Notificacoes;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/GetEntityById")]
+        [HttpGet]
+        [Route("GetEntityById")]
         public async Task<FuncaoViewModel> GetEntityById(Funcao Funcao)
         {
             Funcao = await _IFuncao.GetEntityById(Funcao.Id);
@@ -62,9 +70,11 @@ namespace WebAPIs.Controllers
             return funcaoMap;
         }
 
-        [Authorize]
+        //[Authorize]
+        [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/List")]
+        [HttpGet]
+        [Route("List")]
         public async Task<List<FuncaoViewModel>> List()
         {
             var funcao = await _IFuncao.List();
